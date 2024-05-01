@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/css/styles.css">
+    <title>Sidebar</title>
+    <style>
+        /* CSS para o popup */
+        #sidebar {
+            position: fixed;
+            top: 50%;
+            left: 10px; /* Adicionando 10px de margem à esquerda */
+            width: 150px; /* Largura da barra lateral */
+            height: 60%;
+            background-color: white; /* Cor de fundo da barra lateral */
+            color: black; /* Cor do texto da barra lateral */
+            padding-top: 50px;
+            transform: translateY(-50%);
+        }
+
+        #user_avatar.hidden {
+            display: none;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw; /* 80% da largura da viewport */
+            height: 80vh; /* 80% da altura da viewport */
+            max-width: 600px;
+            max-height: 600px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px brown;
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 9999;
+        }
+
+        #popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+
+    /* Estilo para o contêiner do conteúdo da página */
+    #page_content_container {
+        position: absolute;
+        width: 80vw; /* 80% da largura da viewport */
+        height: 90vh;
+        top: 50%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px brown;
+        background-color: #fdfafa;
+        overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
+    }
+
+
+
+        /* Alterações para mudar a cor dos itens da sidebar */
+        #sidebar ul li:hover,
+        #sidebar ul li.active {
+            background-color: brown;
+        }
+        .tooltip {
+            position: absolute;
+            background-color: black;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            display: none;
+            z-index: 999; /* Para garantir que fique acima de outros elementos */
+        }
+
+        @media screen and (max-width: 950px) {
+    #sidebar {
+        background-color: transparent;
+        left: 1px; /* Adicionando 10px de margem à esquerda */
+            width: 0px; /* Largura da barra lateral */
+            height: 50%;
+}
+
+
+}
+
+
+        
+    </style>
+</head>
+<body>
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+                <img src="src/images/avatar.png" id="user_avatar" class="hidden" alt="Avatar">
+                <p id="user_infos">
+                    <span class="item-description">
+                        Romário Galdino
+                    </span>
+                    <span class="item-description">
+                        Formado em História <br> Graduando em Pedagogia<br> e Ciencia da Computação.
+                    </span>
+                </p>
+            </div>
+    
+            <ul id="side_items">
+                <li class="side-item active">
+                    <!-- Modificado para chamar a função que carrega a página -->
+                    <a href="#" onclick="loadPage('home.html')">
+                        <i class="fa-solid fa-home"></i>
+                        <span class="item-description">
+                            Home
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="#" onclick="loadPage('cv.html')">
+                        <i class="fa-solid fa-file-alt"></i>
+                        <span class="item-description">
+                            Currículo CV
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="#" onclick="loadPage('ex.html')">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span class="item-description">
+                            Experiências
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#" onclick="loadPage('blog.html')">
+                        <i class="fa-solid fa-rss"></i>
+                        <span class="item-description">
+                            Meu Blog
+                        </span>
+                    </a>
+                </li>
+            </ul>
+    
+            <button id="open_btn" onclick="toggleAvatar()">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contêiner para o conteúdo da página -->
+    <div id="page_content_container"></div>
+
+    <script src="src/javascript/script.js"></script>
+    <script>
+        // Função para carregar o conteúdo da página dentro do contêiner
+        function loadPage(page) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Define o conteúdo do contêiner como o conteúdo da página
+                    document.getElementById("page_content_container").innerHTML = this.responseText;
+                    // Remover a classe 'active' de todos os itens da barra lateral
+                    var sideItems = document.querySelectorAll("#side_items .side-item");
+                    sideItems.forEach(function(item) {
+                        item.classList.remove('active');
+                    });
+                    // Adicionar a classe 'active' ao item clicado
+                    event.target.closest('.side-item').classList.add('active');
+                } else if (this.readyState == 4 && this.status != 200) {
+                    alert("Erro ao carregar a página.");
+                }
+            };
+            xhttp.open("GET", page, true);
+            xhttp.send();
+        }
+
+        // Carregar a página inicial ao carregar a página
+        window.onload = function() {
+            loadPage('home.html');
+        }
+
+        // Função para alternar a visibilidade do avatar
+        function toggleAvatar() {
+            var avatar = document.getElementById('user_avatar');
+            avatar.classList.toggle('hidden');
+        }
+        function showTooltip(event) {
+            // Obter o nome do botão a partir do conteúdo do elemento <span>
+            var buttonName = event.target.querySelector('.item-description').innerText;
+
+            // Criar um elemento para exibir o tooltip
+            var tooltip = document.createElement('div');
+            tooltip.classList.add('tooltip');
+            tooltip.innerText = buttonName;
+
+            // Definir a posição do tooltip
+            tooltip.style.top = (event.clientY + 10) + 'px'; // 10 pixels abaixo do cursor
+            tooltip.style.left = (event.clientX + 10) + 'px'; // 10 pixels à direita do cursor
+
+            // Adicionar o tooltip ao corpo do documento
+            document.body.appendChild(tooltip);
+
+            // Exibir o tooltip
+            tooltip.style.display = 'block';
+        }
+
+        // Função para esconder o tooltip ao retirar o mouse do botão
+        function hideTooltip() {
+            // Remover o tooltip do corpo do documento
+            var tooltip = document.querySelector('.tooltip');
+            if (tooltip) {
+                tooltip.parentNode.removeChild(tooltip);
+            }
+        }
+
+        // Adicionar eventos de mouseover e mouseout aos elementos <a> dentro dos itens da barra lateral
+        var sideItemLinks = document.querySelectorAll('#side_items .side-item a');
+        sideItemLinks.forEach(function(link) {
+            link.addEventListener('mouseover', showTooltip);
+            link.addEventListener('mouseout', hideTooltip);
+        });
+    </script>
+</body>
+</html>
