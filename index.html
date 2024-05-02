@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/css/styles.css">
-    <title>Romario_Galdino</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon" >
+    <title>Romario</title>
     <style>
         /* CSS para o popup */
         #sidebar {
@@ -83,19 +84,93 @@
             z-index: 999; /* Para garantir que fique acima de outros elementos */
         }
 
-        @media screen and (max-width: 950px) {
-    #sidebar {
-        background-color: transparent;
-        left: 1px; /* Adicionando 10px de margem à esquerda */
-            width: 0px; /* Largura da barra lateral */
-            height: 50%;
+        @media screen and (max-width: 750px) {
+            #sidebar {
+    background-color: transparent;
+    position: fixed;
+    top: 500px;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: auto;
+    background-color: white;
+    color: black;
+    margin-left:35px;
+    margin-right: auto;
+    transform: translateY(0);
 }
 
-
-}
-
-
+#page_content_container {
         
+        width: 90vw; /* 80% da largura da viewport */
+        height: 90vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: auto;
+        padding: 20px;
+    }
+
+    #sidebar_content {
+        padding-top: 20px;
+    }
+
+    #user {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        padding: 0px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #user_avatar {
+        background-color: transparent;
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    #side_items {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .side-item {
+        width: 100%;
+    }
+
+    .side-item a {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .side-item a i {
+        margin-right: 10px;
+    }
+
+    #open_btn {
+        display: none;
+    }
+
+    .side-item a {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    #side_items {
+        flex-direction: row; /* Altera a direção do flex para linha */
+    }
+
+    .side-item {
+        margin-right: 10px; /* Adiciona margem entre os itens */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -108,7 +183,7 @@
                         Romário Galdino
                     </span>
                     <span class="item-description">
-                        Formado em História <br> Graduando em Pedagogia<br> e Ciência da Computação.
+                        Formado em História <br> Graduando em Pedagogia<br> e Ciencia da Computação.
                     </span>
                 </p>
             </div>
@@ -138,6 +213,15 @@
                         <i class="fa-solid fa-briefcase"></i>
                         <span class="item-description">
                             Experiências
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#" onclick="loadPage('dev.html')">
+                        <i class="fas fa-laptop-code"></i>
+                        <span class="item-description">
+                            Desenvolvedor
                         </span>
                     </a>
                 </li>

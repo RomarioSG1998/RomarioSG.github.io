@@ -31,3 +31,29 @@ body {
     margin-bottom: 5px;
   }
   
+  @media screen and (max-width: 750px) {
+    .resume {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .resume h1 {
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+
+    .resume h2 {
+        margin-top: 15px;
+        font-size: 18px;
+    }
+
+    .resume p {
+        margin: 3px 0;
+        font-size: 14px;
+    }
+
+    .resume ul li {
+        margin-bottom: 3px;
+        font-size: 14px;
+    }
+}

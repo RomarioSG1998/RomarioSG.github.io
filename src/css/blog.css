@@ -43,3 +43,28 @@ p {
 .blog-link a:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 750px) {
+    .container {
+        max-width: 90%;
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .blog-link {
+        margin-top: 15px;
+    }
+
+    .blog-link a {
+        font-size: 18px;
+    }
+}
