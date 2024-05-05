@@ -12,43 +12,71 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    text-align: justify; /* Justifica o texto dentro do container */
 }
+
 header {
     background-color: brown;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
+
 .container {
     width: 80%;
     margin: 20px auto;
 }
+
 h2 {
     text-align: center;
     color: #007bff;
 }
+
 .project {
     margin-bottom: 20px; /* Adicionando um espaço de 20 pixels entre os projetos */
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
+    text-align: justify; /* Justifica o texto dentro do projeto */
 }
 
 .project h3 {
+    text-align: justify; /* Justifica o texto dentro do projeto */
     margin-top: 0;
 }
+
 .project p {
-    text-align: center;
+    text-align: justify; /* Justifica o texto dentro do projeto */
     margin-bottom: 0;
 }
+
 #p1 {
     text-align: center;
     margin-bottom: 0;
 }
+
 /* Media Query para telas com largura máxima de 750px */
 @media (max-width: 750px) {
     .container {
         width: 90%; /* Alterando a largura do container para 90% */
         margin: 20px auto;
+    }
+    h1 {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+
+    h4 {
+        margin-top: 15px;
+        font-size: 12px;
+    }
+    p {
+        margin-top: 15px;
+        font-size: 12px;
+    }
+
+    .resume p {
+        margin: 3px 0;
+        font-size: 14px;
     }
 }
