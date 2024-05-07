@@ -3,45 +3,30 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffdead;
+    letter-spacing: 1px; /* Ajustando o espaçamento entre as letras */
+    word-spacing: 0px; /* Ajustando o espaçamento entre as palavras */
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    text-align: justify; /* Justifica o texto dentro do container */
-}
+/* Seu outro CSS continua abaixo */
+
 
 header {
-    background-color: brown;
-    color: #fff;
+    background-color: brown;;
+    color:  white;;
     padding: 20px;
     text-align: center;
 }
 
-.container {
-    width: 80%;
-    margin: 20px auto;
-}
 
 h2 {
     text-align: center;
     color: #007bff;
 }
 
-.project {
-    margin-bottom: 20px; /* Adicionando um espaço de 20 pixels entre os projetos */
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: justify; /* Justifica o texto dentro do projeto */
-}
+
 
 .project h3 {
-    text-align: justify; /* Justifica o texto dentro do projeto */
+    text-align: center; /* Justifica o texto dentro do projeto */
     margin-top: 0;
 }
 
@@ -65,7 +50,6 @@ h2 {
         margin-bottom: 5px;
         font-size: 16px;
     }
-
     h4 {
         margin-top: 15px;
         font-size: 12px;
@@ -74,7 +58,6 @@ h2 {
         margin-top: 15px;
         font-size: 12px;
     }
-
     .resume p {
         margin: 3px 0;
         font-size: 14px;
