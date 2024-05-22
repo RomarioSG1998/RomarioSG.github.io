@@ -3,69 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <title>Minha Carreira como Desenvolvedor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./src/css/dev.css">
-    <style>
-        .technologies {
-            text-align: center;
-        }
-        .technology-item {
-            display: inline-block;
-            margin: 0 10px;
-        }
-        .js-icon {
-            color: #f0db4f; /* Amarelo - JavaScript */
-            font-size: 24px;
-        }
-        .php-icon {
-            color: #8892be; /* Azul - PHP */
-            font-size: 24px;
-        }
-        .python-icon {
-            color: #306998; /* Azul - Python */
-            font-size: 24px;
-        }
-        .sql-icon {
-            color: #4caf50; /* Verde - SQL */
-            font-size: 24px;
-        }
-        .bullet {
-            color: black; /* Cor das bolinhas */
-            font-size: 15px;
-            margin-top: 5px;
-        }
-        .blue-bullet {
-            color: brown; /* Cor das bolinhas azuis */
-        }
-
-        .laravel-icon {
-            color: #ff2d20; /* Vermelho - Laravel */
-            font-size: 24px;
-        }
-        .react-icon {
-            color: #61dafb; /* Azul claro - React */
-            font-size: 24px;
-        }
-        .nodejs-icon {
-            color: #68a063; /* Verde - Node.js */
-            font-size: 24px;
-        }
-    </style>
 </head>
 <body>
 
 <header>
-    <h1> Carreira de Desenvolvedor</h1>
+    <h1>Carreira de Desenvolvedor</h1>
 </header>
 
 <div class="container">
     <section id="sobre-mim">
         <h2>Sobre Mim</h2>
-        <p>Antes de iniciar minha graduação em Licenciatura - História, nutria um grande interesse pela área de TI. Com o tempo, percebi que não deveria me limitar, mas explorar diversas possibilidades. Decidi enfrentar o desafio de estudar Programação e ingressei em Ciência da Computação. Atualmente, estou no segundo semestre e já desenvolvi vários projetos, adquirindo habilidades em linguagens como JavaScript, PHP e Python.</p>
+        <p id="p1">Antes de iniciar minha graduação em Licenciatura - História, nutria um grande interesse pela área de TI. Com o tempo, percebi que não deveria me limitar, mas explorar diversas possibilidades. Decidi enfrentar o desafio de estudar Programação e ingressei em Ciência da Computação. Atualmente, estou no segundo semestre e já desenvolvi vários projetos, adquirindo habilidades em linguagens como JavaScript, PHP e Python.</p>
     </section>
-<br>
-    <section id="projetos">
+    <br>
+    <section id="tecnologias">
         <h2>Tecnologias</h2>
         <p id="p1">Nos projetos que desenvolvi, utilizei uma variedade de tecnologias:</p>
         <div class="technologies">
@@ -85,7 +41,8 @@
                 <i class="fas fa-database sql-icon"></i> SQL
                 <div class="bullet blue-bullet">&#9679;&#9679;&#9675;&#9675;&#9675;</div>
             </div>
-            <p>Estou estudando esses frameworks, todavia ainda não tive a oportunidade de desenvolver projetos com eles:</p>
+        </div>
+        <p id="p1">Estou estudando esses frameworks, todavia ainda não tive a oportunidade de desenvolver projetos com eles:</p>
         <div class="technologies">
             <div class="technology-item">
                 <i class="fab fa-php laravel-icon"></i> Laravel
@@ -100,22 +57,37 @@
                 <div class="bullet blue-bullet">&#9679;&#9675;&#9675;&#9675;&#9675;</div>
             </div>
         </div>
-        <br>
+    </section>
+    <br>
+    <section id="projetos">
         <h2>Projetos</h2>
-<br>
-        <div class="project">
-            <h3>Reforço Sede do Saber</h3>
-            <p>Concebi e implementei um robusto aplicativo web para gerenciamento acadêmico, empregando um conjunto diversificado de tecnologias, incluindo HTML, CSS, JavaScript, PHP e SQL. Durante um ciclo de sete meses, mergulhei profundamente no desenvolvimento tanto do front-end quanto do back-end, garantindo uma experiência integrada e fluida para os usuários. Este projeto representou não apenas um marco em minha jornada profissional, mas também um período de intensa imersão e crescimento, onde enfrentei desafios, refinei minhas habilidades e expandi significativamente meu domínio em programação.</p>
-           <br> <p>Link do projeto: <a href="https://sededosaber.infinityfreeapp.com/">https://sededosaber.infinityfreeapp.com/</a>    obs.: trata-se de um app de uso privado, assim só posso mostrar a página de login e o repositório no <a href="https://github.com/RomarioSG1998/site-do-reforco">GitHub</a>. Também tenho a apresentação do projeto no <a href="https://www.youtube.com/">YouTube</a>.</p>
+        <br>
+        <div class="project-container">
+            <div class="project-image">
+                <img src="./src/images/ref.gif" alt="Imagem do Projeto Reforço Sede do Saber">
+            </div>
+            <div class="project-details">
+                <h3>Reforço Sede do Saber</h3>
+                <p id="p1">Concebi e implementei um robusto aplicativo web para gerenciamento acadêmico, empregando um conjunto diversificado de tecnologias, incluindo HTML, CSS, JavaScript, PHP e SQL. Durante um ciclo de sete meses, mergulhei profundamente no desenvolvimento tanto do front-end quanto do back-end, garantindo uma experiência integrada e fluida para os usuários. Este projeto representou não apenas um marco em minha jornada profissional, mas também um período de intensa imersão e crescimento, onde enfrentei desafios, refinei minhas habilidades e expandi significativamente meu domínio em programação.</p>
+                <br>
+                <p id="p1">Link do <a href="https://sededosaber.infinityfreeapp.com/">projeto</a>
+                obs.: trata-se de um app de uso privado, assim só posso mostrar a página de login e o repositório no <a href="https://github.com/RomarioSG1998/site-do-reforco">GitHub</a>. Também tenho a apresentação do projeto no <a href="https://www.youtube.com/">YouTube</a>.</p>
+            </div>
         </div>
         <br>
-        <div class="project">
-            <h3>Meu Portifólio</h3>
-            <p>Estou atualmente engajado na criação de um portfólio profissional, uma plataforma cuidadosamente elaborada destinada a apresentar meu percurso profissional, experiências educacionais e incursões na área de Tecnologia da Informação. Com dedicação exclusiva a este projeto, estou empenhado em transmitir uma visão abrangente e representativa de minhas habilidades, conquistas e ambições. Utilizando as bases fundamentais da web - HTML, CSS e JavaScript - estou moldando uma presença digital que não apenas evidencia minha proficiência técnica, mas também reflete meu compromisso com a excelência e a inovação. Este empreendimento representa não apenas um testemunho de minha jornada profissional até o momento, mas também uma promessa de desenvolvimento contínuo e evolução constante.</p>
-            <br> <p>Link do <a href="https://romariosg1998.github.io/RomarioSG.github.io/">projeto </a> obs.: trata-se do presente site que você está visualizando , tenho a apresentação  do projeto no <a href="https://www.youtube.com/">YouTube</a>.</p>
+        <div class="project-container">
+            <div class="project-image">
+                <img src="./src/images/pt.gif" alt="Imagem do Projeto Meu Portfólio">
+            </div>
+            <div class="project-details">
+                <h3>Meu Portfólio</h3>
+                <p id="p1">Estou atualmente engajado na criação de um portfólio profissional, uma plataforma cuidadosamente elaborada destinada a apresentar meu percurso profissional, experiência educacionais e incursões na área de Tecnologia da Informação. Com dedicação exclusiva a este projeto, estou empenhado em transmitir uma visão abrangente e representativa de minhas habilidades, conquistas e ambições. Utilizando as bases fundamentais da web - HTML, CSS e JavaScript - estou moldando uma presença digital que não apenas evidencia minha proficiência técnica, mas também reflete meu compromisso com a excelência e a inovação. Este empreendimento representa não apenas um testemunho de minha jornada profissional até o momento, mas também uma promessa de desenvolvimento contínuo e evolução constante.</p>
+                <br>
+                <p id="p1">Link do <a href="https://romariosg1998.github.io/RomarioSG.github.io/">projeto</a>
+                obs.: trata-se do presente site que você está visualizando, tenho a apresentação do projeto no <a href="https://www.youtube.com/">YouTube</a>.</p>
+            </div>
         </div>
     </section>
 </div>
-
 </body>
 </html>

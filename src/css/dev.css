@@ -1,49 +1,132 @@
 body {
-    font-family: 'Times New Roman', Times, serif, sans-serif;
-    margin: 0;
+    font-family: 'Poetsen One';
+    margin: 0px;
     padding: 0;
     background-color: #ffdead;
-    letter-spacing: 1px; /* Ajustando o espaçamento entre as letras */
-    word-spacing: 0px; /* Ajustando o espaçamento entre as palavras */
+    letter-spacing: 1px;
+    word-spacing: 0px;
 }
-
-/* Seu outro CSS continua abaixo */
-
+.poetsen-one-regular {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 header {
-    background-color: brown;;
-    color:  white;;
+    background-color: brown;
+    color: white;
     padding: 20px;
     text-align: center;
 }
-
 
 h2 {
     text-align: center;
     color: #007bff;
 }
 
-
-
 .project h3 {
-    text-align: center; /* Justifica o texto dentro do projeto */
+    text-align: center;
     margin-top: 0;
+    
 }
 
+
 .project p {
-    text-align: justify; /* Justifica o texto dentro do projeto */
+    text-align: justify;
     margin-bottom: 0;
+    
 }
 
 #p1 {
     text-align: center;
     margin-bottom: 0;
+    color: #666;
+}
+
+.technologies {
+    text-align: center;
+}
+
+.technology-item {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.js-icon {
+    color: #f0db4f;
+    font-size: 24px;
+}
+
+.php-icon {
+    color: #8892be;
+    font-size: 24px;
+}
+
+.python-icon {
+    color: #306998;
+    font-size: 24px;
+}
+
+.sql-icon {
+    color: #4caf50;
+    font-size: 24px;
+}
+
+.bullet {
+    color: black;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.blue-bullet {
+    color: brown;
+}
+
+.laravel-icon {
+    color: #ff2d20;
+    font-size: 24px;
+}
+
+.react-icon {
+    color: #61dafb;
+    font-size: 24px;
+}
+
+.nodejs-icon {
+    color: #68a063;
+    font-size: 24px;
+}
+
+.project-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #d3d3d3; /* Cor de fundo mais escura */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.project-image {
+    flex: 1;
+    padding: 10px;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-details {
+    flex: 2;
+    padding: 10px;
 }
 
 /* Media Query para telas com largura máxima de 750px */
 @media (max-width: 750px) {
     .container {
-        width: 90%; /* Alterando a largura do container para 90% */
+        width: 90%;
         margin: 20px auto;
     }
     h1 {
@@ -61,5 +144,16 @@ h2 {
     .resume p {
         margin: 3px 0;
         font-size: 14px;
+    }
+    .project-container {
+        flex-direction: column;
+    }
+    .project-image, .project-details {
+        flex: none;
+        width: 100%;
+        padding: 0;
+    }
+    .project-image img {
+        width: 100%;
     }
 }

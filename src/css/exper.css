@@ -30,11 +30,14 @@ body {
   
   .experience {
     margin-bottom: 20px;
+    color: #666;
   }
-  
+   
   .experience h3 {
     margin-bottom: 5px;
+    color: black;
   }
+    
   
   @media screen and (max-width: 750px) {
     .resume {
