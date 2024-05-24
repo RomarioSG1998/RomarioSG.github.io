@@ -10,7 +10,7 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: #ffdead;
+    background-color: #696969;
 }
 
 main {
@@ -22,7 +22,7 @@ main {
 
 #sidebar {
     display: flex;
-    min-width: 40px;
+    min-width: 60px;
     left: 25px; 
     flex-direction: column;
     justify-content: space-between;
@@ -52,7 +52,7 @@ main {
 }
 
 #user_infos span:last-child {
-    color: #6b6b6b;
+    color: #696969;
     font-size: 9px;
 }
 
@@ -142,8 +142,8 @@ main {
     max-width: 600px;
     max-height: 600px;
     background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px brown;
+    border: 1px solid black;
+    box-shadow: 0 2px 4px black;
     padding: 20px;
     overflow-y: auto;
     z-index: 9999;
@@ -167,7 +167,7 @@ main {
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 4px brown;
+    box-shadow: 0 4px 6px black;
     background-color: #fdfafa;
     overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
 }
@@ -184,12 +184,12 @@ main {
 
 /* Remover alterações de cor na sidebar por padrão */
 .side-item:hover{
-    background-color: brown;
+    background-color: rgba(70, 66, 66, 0.4);
 }
 /* Seu código CSS existente */
 
 .side-item.active {
-    background-color: rgba(70, 66, 66, 0.1); /* Fundo com leve transparência */
+    background-color: rgba(70, 66, 66, 0.2); /* Fundo com leve transparência */
 }
 
 
