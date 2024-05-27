@@ -1,19 +1,21 @@
-body {
-    font-family: 'Poetsen One';
-    margin: 0px;
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+* {
+    margin: 0;
     padding: 0;
-    background-color: #696969;
-    letter-spacing: 1px;
-    word-spacing: 0px;
-}
-.poetsen-one-regular {
-    font-family: "Poetsen One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    box-sizing: border-box;
+    font-family: 'Poppins';
   }
+body {
+    font-family: 'Poetsen One', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #5A6D7B;
+    letter-spacing: 1px;
+}
 
 header {
-    background-color: brown;
+    background-color: black;
     color: white;
     padding: 20px;
     text-align: center;
@@ -27,14 +29,11 @@ h2 {
 .project h3 {
     text-align: center;
     margin-top: 0;
-    
 }
-
 
 .project p {
     text-align: justify;
     margin-bottom: 0;
-    
 }
 
 #p1 {
@@ -73,7 +72,6 @@ h2 {
 }
 
 .bullet {
-    color: black;
     font-size: 15px;
     margin-top: 5px;
 }
@@ -86,26 +84,18 @@ h2 {
     color: #ff2d20;
     font-size: 24px;
 }
-
-.react-icon {
-    color: #61dafb;
-    font-size: 24px;
-}
-
-.nodejs-icon {
-    color: #68a063;
-    font-size: 24px;
+.django-icon {
+    color: #092E20; /* Cor verde-escuro do Django */
 }
 
 .project-container {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #d3d3d3; /* Cor de fundo mais escura */
+    background-color: #d3d3d3;
     padding: 20px;
     border-radius: 10px;
 }
-
 
 .project-image {
     flex: 1;
