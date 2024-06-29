@@ -10,18 +10,18 @@ function loadPage(page) {
             // Define o conteúdo do contêiner como o conteúdo da página
             document.getElementById("page_content_container").innerHTML = this.responseText;
 
-            if (window.innerWidth > 690) { // Verifica se a largura da janela é maior que 690 pixels
-                // Remover a classe 'active' de todos os itens da barra lateral
-                var sideItems = document.querySelectorAll("#side_items .side-item");
-                sideItems.forEach(function(item) {
-                    item.classList.remove('active');
-                });
-                // Adicionar a classe 'active' ao item clicado
-                var clickedItem = document.querySelector("[onclick=\"loadPage('" + page + "')\"]");
-                if (clickedItem) {
-                    clickedItem.closest('.side-item').classList.add('active');
-                }
+            // Remover a classe 'active' de todos os itens da barra lateral
+            var sideItems = document.querySelectorAll("#side_items .side-item");
+            sideItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+
+            // Adicionar a classe 'active' ao item clicado
+            var clickedItem = document.querySelector("[onclick=\"loadPage('" + page + "')\"]");
+            if (clickedItem) {
+                clickedItem.closest('.side-item').classList.add('active');
             }
+
         } else if (this.readyState == 4 && this.status != 200) {
             alert("Erro ao carregar a página.");
         }
@@ -35,15 +35,13 @@ function setupSidebarItems() {
     var sideItems = document.querySelectorAll("#side_items .side-item a");
     sideItems.forEach(function(link) {
         link.addEventListener('click', function(event) {
-            if (window.innerWidth > 690) { // Apenas em telas grandes
-                // Remover a classe 'active' de todos os itens
-                var allItems = document.querySelectorAll("#side_items .side-item");
-                allItems.forEach(function(item) {
-                    item.classList.remove('active');
-                });
-                // Adicionar a classe 'active' ao item clicado
-                link.closest('.side-item').classList.add('active');
-            }
+            // Remover a classe 'active' de todos os itens
+            var allItems = document.querySelectorAll("#side_items .side-item");
+            allItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+            // Adicionar a classe 'active' ao item clicado
+            link.closest('.side-item').classList.add('active');
         });
     });
 }

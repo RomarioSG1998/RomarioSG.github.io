@@ -195,45 +195,46 @@ main {
 
 
 /* Alterações para mudar a cor dos itens da sidebar somente em telas de celular */
-@media screen and (max-width: 690px) {
+/* Estilos responsivos para dispositivos móveis */
+@media screen and (max-width: 1020px) {
     body {
         overflow: hidden;
     }
-    
+
     #sidebar {
-        background-color: transparent;
         position: fixed;
-        top: 525px;
-        left: 0;
-        right: 0;
-        width: 0%;
+        bottom: 5%;
+        left: 53%;
+        transform: translateX(-50%);
+        width: 50px; /* Ajuste a largura conforme necessário */
         height: auto;
-        background-color: rgba(255, 255, 255, 0.10); /* Define o fundo com 80% de opacidade */
+        background-color: rgba(255, 255, 255, 0.10); /* Fundo com 10% de opacidade */
         color: black;
-        margin-left: 32px;
-        margin-right: auto;
-        transform: translateY(0);
+        margin-left: 0; /* Remova margens fixas */
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-   
+
     #page_content_container {
-        width: 90vw; /* 80% da largura da viewport */
-        height: 90vh;
+        width: 90%; /* 90% da largura da viewport */
+        height: 90%; /* 90% da altura da viewport */
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        margin: auto;
-        padding: 0px;
+        margin: 0; /* Remova margens fixas */
+        padding: 0;
     }
 
     #sidebar_content {
         padding-top: 20px;
     }
 
-    
     #side_items {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 70%;
     }
 
     .side-item {
@@ -243,13 +244,24 @@ main {
     .side-item a {
         display: flex;
         align-items: center;
-        padding: 10px;
+        padding: 0px;
         border-bottom: 1px solid #ccc;
+        text-decoration: none;
+        color: #333;
+        transition: background-color 0.3s;
     }
 
     .side-item a i {
         margin-right: 10px;
         opacity: 0.3; /* Define a opacidade dos ícones */
+    }
+
+    .side-item a:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Fundo levemente escuro ao passar o mouse */
+    }
+
+    .side-item.active a {
+        background-color: rgba(0, 0, 0, 0.2); /* Fundo levemente escuro para o item ativo */
     }
 
     #open_btn {
@@ -267,13 +279,5 @@ main {
 
     .side-item {
         margin-right: 10px; /* Adiciona margem entre os itens */
-    }
-
-    /* Alterações de cor específicas para dispositivos móveis */
-    .side-item:hover,
-    .side-item:active,
-    .side-item:focus,
-    #logout_btn:hover {
-        background-color: inherit;
     }
 }
